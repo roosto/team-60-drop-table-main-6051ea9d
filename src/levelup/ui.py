@@ -10,6 +10,19 @@ class GameApp:
 
     def __init__(self):
         self.controller = GameController()
+        self.load_dragon()
+
+    def load_dragon(self):
+        file_path = '../assets/Dragon.txt'
+        try:
+            with open(file_path, "r") as file:
+                # Read the contents of the file and print them
+                file_contents = file.read()
+                print(file_contents)
+        except FileNotFoundError:
+            print(f"File '{file_path}' not found.")
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
 
     def prompt(self, menu: str, validation_fn: Callable[[str], bool]) -> str:
         while True:
