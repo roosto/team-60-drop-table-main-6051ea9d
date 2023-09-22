@@ -4,15 +4,14 @@ from levelup.direction import Direction
 
 class Character:
     name = ""
-    map :Map = map()
-    current_position :Position = Position(-100,-100)
+    map :Map = None
+    current_position :Position = None
 
     def __init__(self, character_name):
         self.name = character_name
     
     def enter_map(self, new_map: Map):
-#        self.map = new_map
-        self.map = map
+        self.map = new_map
         self.current_position = self.map.starting_position
 
     def move(self, direction :Direction) -> None:
