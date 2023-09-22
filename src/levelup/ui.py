@@ -14,6 +14,7 @@ class GameApp:
         self.load_banner()
         self.load_dragon()
         self.load_progress_bar()
+        self.load_legal_disclaimer()
 
     def load_banner(self):
         ascii_banner = pyfiglet.figlet_format("eXtreme \n KINGDOMS")
@@ -21,6 +22,10 @@ class GameApp:
 
     def load_progress_bar(self):
         print('\n\n Loading ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100% complete')
+
+    def load_legal_disclaimer(self):
+        print('\nThe unauthorized reproduction or distribution of a copyrighted work is illegal. \nCriminal copyright infringement is investigated by federal law enforcement agencies \nand is punishable by up to five years in prison and a fine of $250,000. ')
+        print('\nLevelup Games LLC - All Rights Reserved')
 
     def load_dragon(self):
         file_path = '../assets/Dragon.txt'
