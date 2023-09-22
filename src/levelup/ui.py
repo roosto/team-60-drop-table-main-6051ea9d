@@ -1,4 +1,5 @@
 import logging
+import pyfiglet
 from typing import Callable
 from levelup.controller import GameController, Direction, InvalidMoveException
 
@@ -10,7 +11,16 @@ class GameApp:
 
     def __init__(self):
         self.controller = GameController()
+        self.load_banner()
         self.load_dragon()
+        self.load_progress_bar()
+
+    def load_banner(self):
+        ascii_banner = pyfiglet.figlet_format("eXtreme \n KINGDOMS")
+        print(ascii_banner)
+
+    def load_progress_bar(self):
+        print('\n\n Loading ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100% complete')
 
     def load_dragon(self):
         file_path = '../assets/Dragon.txt'
